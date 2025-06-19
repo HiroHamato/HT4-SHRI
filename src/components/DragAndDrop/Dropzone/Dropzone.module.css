@@ -44,3 +44,9 @@
     text-align: center;
     width: 100%;
 }
+
+.processingText {
+    font-size: 35px;
+    color: #201b10;
+    text-align: center;
+}
