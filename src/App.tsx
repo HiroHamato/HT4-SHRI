@@ -6,8 +6,12 @@ import Header from './components/Header';
 import HomePage from './pages/MainPage/MainPage';
 import HistoryPage from './pages/HistoryPage/HistoryPage';
 import GeneratePage from './pages/GeneratePage/GeneratePage';
+import { useEffect } from 'react';
 
 const App: React.FC = () => {
+    useEffect(() => {
+        document.title = "МЕЖГАЛАКТИЧЕСКАЯ АНАЛИТИКА";
+    }, []);
     return (
         <Router>
             <Header />
