@@ -31,6 +31,10 @@ http://127.0.0.1:3000/ или http://localhost:3000/
 
 # Архитектура проекта
 
+## Графика архитектуры проекта:
+
+![image](https://github.com/HiroHamato/HT4-SHRI/blob/main/architecture.png?raw=true)
+
 ## Основные компоненты
 
 - ### App (корневой компонент):
@@ -95,7 +99,19 @@ Drag-and-drop зона для загрузки файлов
 
 Визуальная обратная связь при ошибках
 
-Интеграция с `FileInfo` и `ProcessingSpinner`
+Интеграция с `FileInfo`,`ProcessingSpinner` и `DropzonePrompt`
+
+- #### FileInfo:
+
+Отображает информацию о загруженном файле
+
+- #### ProcessingSpinner:
+
+Отображает индикатор загрузки
+
+- #### DropzonePrompt:
+
+Отображает текст для загрузки файлов
 
 - ### Stats:
 
