@@ -1,54 +1,164 @@
-# React + TypeScript + Vite
+# Инструкции по запуску проекта
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Клонирование репозитория:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-    extends: [
-        // Remove ...tseslint.configs.recommended and replace with this
-        ...tseslint.configs.recommendedTypeChecked,
-        // Alternatively, use this for stricter rules
-        ...tseslint.configs.strictTypeChecked,
-        // Optionally, add this for stylistic rules
-        ...tseslint.configs.stylisticTypeChecked,
-    ],
-    languageOptions: {
-        // other options...
-        parserOptions: {
-            project: ['./tsconfig.node.json', './tsconfig.app.json'],
-            tsconfigRootDir: import.meta.dirname,
-        },
-    },
-});
+```
+git clone https://github.com/HiroHamato/HT4-SHRI.git
+cd HT4-SHRI
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Установка зависимостей:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
-
-export default tseslint.config({
-    plugins: {
-        // Add the react-x and react-dom plugins
-        'react-x': reactX,
-        'react-dom': reactDom,
-    },
-    rules: {
-        // other rules...
-        // Enable its recommended typescript rules
-        ...reactX.configs['recommended-typescript'].rules,
-        ...reactDom.configs.recommended.rules,
-    },
-});
 ```
+npm install
+```
+
+## Запуск приложения:
+
+```
+npm run dev
+```
+
+#### Откройте в браузере:
+
+Приложение будет доступно по адресу, который даст vite, например:
+http://localhost:5173/
+
+## Важно!
+
+Не забудь запустить бэк на порте 3000 что бы апи было доступно по адресу
+http://127.0.0.1:3000/ или http://localhost:3000/
+
+# Архитектура проекта
+
+## Основные компоненты
+
+- ### App (корневой компонент):
+
+Управляет роутингом через react-router-dom
+
+Содержит глобальный `<Header>`
+
+Маршруты:
+
+`/ → HomePage`
+
+`/history → HistoryPage`
+
+`/generate → GeneratePage`
+
+- ### Header:
+
+Навигационная панель с переключением между страницами
+
+Использует `NavLink` для подсветки активного пути
+
+## Страницы:
+
+- ### HomePage:
+
+Основной компонент: `FileProcessor`
+
+Загрузка и обработка CSV-файлов
+
+- ### HistoryPage:
+
+Отображает `HistoryList`
+
+Кнопки управления историей
+
+- ### GeneratePage:
+
+Генерация CSV-отчетов
+
+Управление статусом операции
+
+## Компоненты обработки файлов
+
+- ### FileProcessor:
+
+Координирует процесс `загрузки → обработки → отображения`
+
+#### Состояния:
+
+`selectedFile (текущий файл)`
+
+`isProcessing (статус обработки)`
+
+`lastJson (результат агрегации)`
+
+Интеграция с глобальным состоянием через `useStore`
+
+- ### Dropzone:
+
+Drag-and-drop зона для загрузки файлов
+
+Визуальная обратная связь при ошибках
+
+Интеграция с `FileInfo` и `ProcessingSpinner`
+
+- ### Stats:
+
+Отображает агрегированные данные
+
+Форматирование чисел через `formatNumber`
+
+Работа с состоянием
+
+## Глобальное состояние (useStore):
+
+Хранилище Zustand с использованием `localStorage` через метод `persist` из `zustand/middleware`
+
+Ключевые сущности:
+
+```
+interface StoreState {
+    history: HistoryItem[]; // История операций
+    currentData: unknown; // Текущие данные
+    isLoading: boolean; // Статус загрузки
+}
+```
+
+Методы:
+
+`addHistoryItem()` - добавление записи
+
+`updateHistoryItem()` - обновление статуса
+
+`removeHistoryItem()` - удаление записи
+
+## Утилиты
+
+Форматирование:
+
+`formatNumber()` - форматирование и округление чисел (1000.5 → "1001")
+
+`formatDayOfYear()` - преобразование дня года в дату ("32" → "1 февраля")
+
+`formatDateTime()` - форматирование даты
+
+## Работа с API:
+
+`generateReport()` - генерация CSV-отчета
+
+`aggregateData()` - агрегация загруженных данных
+
+Базовый URL: http://127.0.0.1:3000
+
+## Компоненты истории операций
+
+- ### HistoryList:
+
+Отображает список операций
+
+Интеграция с `HistoryListItem`
+
+Обработка пустого состояния
+
+- ### HistoryDetailsModal:
+
+Модальное окно с детализацией операции реализование с помощью `React.createPortal`
+
+Отображает статистику аналогично `Stats`
+
+Закрытие по клику вне области
