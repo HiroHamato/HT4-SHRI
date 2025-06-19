@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 
 const App: React.FC = () => {
     useEffect(() => {
-        document.title = "МЕЖГАЛАКТИЧЕСКАЯ АНАЛИТИКА";
+        document.title = 'МЕЖГАЛАКТИЧЕСКАЯ АНАЛИТИКА';
     }, []);
     return (
         <Router>
