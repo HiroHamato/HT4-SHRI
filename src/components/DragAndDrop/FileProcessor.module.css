@@ -1,0 +1,47 @@
+.container {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.processButton {
+    background-color: #2ae881;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 35px;
+    transition: background-color 0.3s;
+    width: 15%;
+    border-radius: 15px;
+}
+
+.processButton:disabled {
+    background-color: #c0c0c0;
+    cursor: not-allowed;
+}
+
+.processButton:hover:not(:disabled) {
+    background-color: #2ae881;
+    color: #201b10;
+}
+
+.topText {
+    font-size: 30px;
+    color: #201b10;
+    margin-bottom: 10px;
+}
+
+.higlightText {
+    color: #cb81ff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin-top: 250px;
+}

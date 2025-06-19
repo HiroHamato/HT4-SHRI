@@ -1,0 +1,22 @@
+.dropPrompt {
+    color: #666;
+    line-height: 1.5;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropText1 {
+    background-color: white;
+    padding: 15px;
+    font-size: 35px;
+    width: 40%;
+    border-radius: 8px;
+    color: #201b10;
+}
+
+.dropText2 {
+    font-size: 35px;
+    color: #201b10;
+}

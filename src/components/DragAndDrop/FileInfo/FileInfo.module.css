@@ -1,0 +1,46 @@
+.fileInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.clearButton {
+    background: none;
+    border: none;
+    font-size: 40px;
+    font-weight: 100;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+}
+
+.fileName {
+    font-size: 35px;
+    color: #201b10;
+    border-radius: 10px;
+    height: 50px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    background-color: #cb81ff;
+}
+
+.greenBackground {
+    background-color: #d4fae6 !important;
+}
+
+.errorBackground {
+    background-color: #ff5f00 !important;
+}
+
+.processingText {
+    font-size: 35px;
+    color: #201b10;
+    text-align: center;
+}

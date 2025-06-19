@@ -1,0 +1,37 @@
+.stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.statRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.statLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 47%;
+    padding: 10px;
+    border-radius: 15px;
+    padding: 30px 0;
+}
+
+.statSubscription {
+    font-size: 20px;
+    color: #201b10;
+    margin-top: 10px;
+}
+
+.statValue {
+    font-size: 40px;
+    color: #201b10;
+}

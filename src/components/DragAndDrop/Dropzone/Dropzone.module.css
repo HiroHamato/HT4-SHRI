@@ -1,0 +1,46 @@
+.dropzone {
+    border-radius: 30px;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eacdff;
+    width: 100%;
+}
+
+.dragActive {
+    background-color: #d4fae6;
+}
+
+.loadedFile {
+    background-color: #fce2ff;
+    border: 1px solid #201b10;
+}
+
+.fileInput {
+    display: none;
+}
+
+.error {
+    border: 2px solid #ff5f00 !important;
+}
+
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.errorText {
+    color: #ff5f00;
+    font-size: 35px;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+}

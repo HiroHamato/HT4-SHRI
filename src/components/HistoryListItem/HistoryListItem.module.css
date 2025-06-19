@@ -1,0 +1,47 @@
+.card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 30px;
+    color: #201b10;
+}
+
+.content {
+    width: 95%;
+    height: 70px;
+    display: grid;
+    grid-template-columns: 3fr 1.5fr 2fr 2fr;
+    align-items: center;
+    background-color: #cb81ff;
+    border-radius: 20px;
+}
+
+.filename {
+    display: flex;
+    align-items: center;
+}
+
+.verdictTrue {
+    display: flex;
+    align-items: center;
+}
+
+.verdictFalse {
+    display: flex;
+    align-items: center;
+    opacity: 0.5;
+}
+
+.deleteButton {
+    cursor: pointer;
+    color: white;
+    background-color: white;
+    border-radius: 20px;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

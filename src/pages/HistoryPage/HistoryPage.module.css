@@ -1,0 +1,40 @@
+.container {
+    padding: 20px;
+    width: 95%;
+}
+
+.title {
+    font-size: 36px;
+    color: #201b10;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.buttonBlock {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.generateButton {
+    text-decoration: none;
+    color: #201b10;
+    font-size: 35px;
+    background-color: #2ae881;
+    font-weight: 500;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.clearButton {
+    text-decoration: none;
+    color: white;
+    font-size: 35px;
+    background-color: #201b10;
+    font-weight: 500;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
