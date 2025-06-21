@@ -92,7 +92,7 @@ const Dropzone: React.FC<DropzoneProps> = ({
                     <DropzonePrompt />
                 )}
                 {hasError && !isProcessing && <div className={styles.errorText}>упс, не то...</div>}
-                {selectedFile && !hasError && !isProcessing && (
+                {selectedFile && !hasError && !isProcessing && !lastJson && (
                     <div className={styles.processingText}>файл загружен!</div>
                 )}
             </div>
